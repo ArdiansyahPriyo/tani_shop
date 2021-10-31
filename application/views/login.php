@@ -10,10 +10,11 @@
                 <h4>Login</h4>
               </div>
               <div class="card-body">
-                <form method="POST" action="#" class="needs-validation" novalidate="">
+                <?php echo $this->session->flashdata('pesan') ?>
+                <form method="POST" action="<?php echo base_url('auth') ?>" class="needs-validation" novalidate="">
                   <div class="form-group">
                     <label for="email">Email</label>
-                    <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
+                    <input id="email" type="email" class="form-control" name="username" tabindex="1" required autofocus>
                     <div class="invalid-feedback">
                       Please fill in your email
                     </div>
@@ -30,8 +31,20 @@
                   </div>
                   <div class="form-group">
                     <div class="custom-control custom-checkbox">
-                      <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
+                      <input type="checkbox" name="show-password"  class="custom-control-input" tabindex="3" id="remember-me">
                       <label class="custom-control-label" for="remember-me">Show Password</label>
+                      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                                            <script>
+                                                $(document).ready(function() {
+                                                    $('#remember-me').click(function() {
+                                                        if ($(this).is(':checked')) {
+                                                            $('#password').attr('type', 'text');
+                                                        } else {
+                                                            $('#password').attr('type', 'password');
+                                                        }
+                                                    });
+                                                });
+                                            </script>
                     </div>
                   </div>
                   <div class="form-group">
@@ -58,7 +71,10 @@
               </div>
             </div>
             <div class="mt-5 text-muted text-center">
-              Don't have an account? <a href="auth-register.html">Create One</a>
+              Belum punya akun? <a href="<?php echo base_url('daftar') ?>">Daftar disini</a>
+            </div>
+            <div class="mt-1 text-muted text-center">
+             <a href="<?php echo base_url('home') ?>">Kembali ke Home</a>
             </div>
           </div>
         </div>
