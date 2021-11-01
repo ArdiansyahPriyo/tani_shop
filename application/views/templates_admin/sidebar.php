@@ -49,28 +49,30 @@
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
-            <li class="dropdown active">
-              <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+
+            <li <?=$this->uri->segment(2) == 'dashboard' || $this->uri->segment(2) == '' ? 'class="dropdown active"' : 'class="dropdown"'?>>
+              <a href="<?php echo base_url('admin/dashboard')?>" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
-            <li class="dropdown active">
-              <a href="index.html" class="nav-link"><i data-feather="package"></i><span>Data Barang</span></a>
+            <li <?=$this->uri->segment(2) == 'data_barang' ? 'class="dropdown active"' : 'class="dropdown"'?>>
+              <a href="<?php echo base_url('admin/data_barang')?>" class="nav-link"><i data-feather="package"></i><span>Data Barang</span></a>
             </li>
-            <li class="dropdown active">
-              <a href="index.html" class="nav-link"><i data-feather="shopping-cart"></i><span>Pesanan Masuk</span></a>
+            <li <?=$this->uri->segment(2) == 'invoice' ? 'class="dropdown active"' : 'class="dropdown"'?>>
+              <a href="<?php echo base_url('admin/invoice') ?>" class="nav-link"><i data-feather="shopping-cart"></i><span>Pesanan Masuk</span></a>
             </li>
-            <li class="dropdown active">
-              <a href="index.html" class="nav-link"><i data-feather="dollar-sign"></i><span>Pembayaran</span></a>
+            <li <?=$this->uri->segment(2) == 'data_pembayaran' ? 'class="dropdown active"' : 'class="dropdown"'?>>
+              <a href="<?php echo base_url('admin/data_pembayaran') ?>" class="nav-link"><i data-feather="dollar-sign"></i><span>Pembayaran</span></a>
             </li>
-            <li class="dropdown active">
+            <li class="dropdown ">
               <a href="index.html" class="nav-link"><i data-feather="phone-forwarded"></i><span>Contact Us</span></a>
             </li>
-            <li class="dropdown active">
-              <a href="index.html" class="nav-link"><i data-feather="settings"></i><span>User Setting</span></a>
+            <li <?=$this->uri->segment(2) == 'data_user' ? 'class="dropdown active"' : 'class="dropdown"'?>>
+              <a href="<?php echo base_url('admin/data_user') ?>" class="nav-link"><i data-feather="settings"></i><span>User Setting</span></a>
             </li>
             
           </ul>
         </aside>
       </div>
+
       <div class="modal fade" id="logout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
@@ -87,3 +89,4 @@
                                 </div>
                             </div>
                         </div>
+                      </div>
