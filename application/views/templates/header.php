@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="<?php echo base_url()?>assets/img/favicon.png" rel="icon">
+  <link href="<?php echo base_url()?>assets/img/st-logo.png" rel="icon">
   <link href="<?php echo base_url()?>assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->

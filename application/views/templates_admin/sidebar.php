@@ -43,7 +43,7 @@
       <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html"> <img alt="image" src="<?php echo base_url()?>assets_admin/img/logo.png" class="header-logo" /> <span
+            <a href="<?php echo base_url('admin/dashboard')?>"> <img alt="image" src="<?php echo base_url()?>assets/img/st-logo.png" class="header-logo" /> <span
                 class="logo-name">Toko Tani</span>
             </a>
           </div>

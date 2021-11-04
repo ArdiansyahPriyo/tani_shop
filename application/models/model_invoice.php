@@ -46,5 +46,34 @@ class Model_invoice extends CI_Model{
 			return false;
 		}
 	}
+
+	public function ambil_id_invoice($id_invoice)
+	{
+		$result = $this->db->where('id', $id_invoice)->limit(1)->get('t_invoice');
+		if($result->num_rows() > 0){
+			return $result->row();
+		}else{
+			return false; 
+		}
+	}
+
+	public function ambil_id_pesanan($id_invoice)
+	{
+		$result = $this->db->where('id_invoice', $id_invoice)->get('t_pesanan');
+		if($result->num_rows() > 0){
+			return $result->result();
+		}else{
+			return false; 
+		}
+	}
+
+	public function edit_invoice($where,$table){
+		return $this->db->get_where($table,$where);
+	}
+
+	public function update_data($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data); 
+	}
 }
 ?>

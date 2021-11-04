@@ -1,12 +1,19 @@
 <div class="main-content">
         <section class="section">
           <div class="section-body">
+            <?php echo $this->session->flashdata('message');  ?>
             <div class="row">
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
                     <h4>Data Invoice</h4>
+                    <button class="btn btn-icon icon-left btn-success mr-1"><i class="fa fa-download"></i> Report</button>
+                    <div class="card-header-action">
+                      <a data-collapse="#mycard-collapse" class="btn btn-icon btn-info" href="#"><i
+                          class="fas fa-minus"></i></a>
+                    </div>
                   </div>
+                  <div class="collapse show" id="mycard-collapse">
                   <div class="card-body">
                     <div class="table-responsive">
                       <table class="table table-striped" id="table-1">
@@ -41,9 +48,9 @@
                             <td><?php echo $inv->batas_bayar ?></td>
                             <td><?php echo $inv->status ?></td>
                             <td>
-                              <a href="#" class="btn btn-primary ml-2">Detail</a>
-                              <a href="#" class="btn btn-success ml-2">Edit</a>
-                              <a href="#" class="btn btn-warning ml-2">Hapus</a>
+                              <?php echo anchor('admin/invoice/detail/' .$inv->id, '<div class="btn btn-primary ml-2">Detail</div>') ?>
+                              <?php echo anchor('admin/invoice/edit/' .$inv->id, '<div class="btn btn-success ml-2">Edit</div>') ?>
+                              <?php echo anchor('admin/invoice/report_detail/' .$inv->id, '<div class="btn btn-warning ml-2">Report</div>') ?>
                             </td>
                           </tr>
                           <?php endforeach; ?>
@@ -51,6 +58,7 @@
                       </table>
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
             </div>
